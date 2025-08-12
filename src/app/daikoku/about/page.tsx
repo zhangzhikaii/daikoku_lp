@@ -37,9 +37,10 @@ export default function AboutPage() {
             <div>
               <h1 className="text-xl text-black ">
                 The street racing culture in Tokyo emerged on the network of the
-                Shuto Expressway. As Japan's economy surged in the 1980s and the
-                expressway expanded, it became a haven for young enthusiasts
-                drawn to high-speed racing and custom car modifications.
+                Shuto Expressway. As Japan&apos;s economy surged in the 1980s
+                and the expressway expanded, it became a haven for young
+                enthusiasts drawn to high-speed racing and custom car
+                modifications.
               </h1>
               <a
                 href="/daikoku/history"
