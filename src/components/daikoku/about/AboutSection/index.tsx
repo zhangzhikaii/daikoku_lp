@@ -2,11 +2,11 @@ import Image from "next/image";
 
 export const AboutSection: React.FC = () => {
   return (
-    <div className="flex flex-col md:flex-row m-10 md:my-10 md:mx-auto gap-5 justify-items-center">
-      <div className="order-first md:order-last flex flex-col justify-between gap-5 flex-1">
+    <div className="flex flex-col m-10 gap-10 md:flex-row md:my-40 md:mx-auto md:max-w-4xl md:px-5 lg:max-w-6xl lg:px-10 lg:gap-20">
+      <div className="order-first flex flex-col justify-between gap-5 md:order-last md:flex-3 md:gap-0 lg:gap-5 lg:p-5">
         <h1 className="text-5xl text-black font-bold">About</h1>
         <div>
-          <h1 className="text-xl text-black max-w-2xl">
+          <h1 className="text-xl text-black">
             The street racing culture in Tokyo emerged on the network of the
             Shuto Expressway. As Japan&apos;s economy surged in the 1980s and
             the expressway expanded, it became a haven for young enthusiasts
@@ -16,12 +16,12 @@ export const AboutSection: React.FC = () => {
             More about underground racing in Tokyo→
           </a>
         </div>
-        <h1 className="text-xl text-black max-w-2xl">
+        <h1 className="text-xl text-black">
           Today, while the days of reckless speeding have faded, the spirit of
           the culture still lives on.
         </h1>
       </div>
-      <div className="order-last md:order-first flex-1">
+      <div className="order-last md:order-first md:flex-2 shadow-2xl">
         <Image
           src={`/intro.jpeg`}
           alt={`intro`}
