@@ -1,9 +1,25 @@
+"use client";
+
 import Image from "next/image";
+import { useInView } from "react-intersection-observer";
 
 export const AboutSection: React.FC = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
   return (
-    <div className="flex flex-col m-10 gap-10 md:flex-row md:my-40 md:mx-auto md:max-w-4xl md:px-5 lg:max-w-6xl lg:px-10 lg:gap-20">
-      <div className="order-first flex flex-col justify-between gap-5 md:order-last md:flex-3 md:gap-0 lg:gap-5 lg:p-5">
+    <div
+      ref={ref}
+      className="flex flex-col m-10 gap-10 md:flex-row md:my-40 md:mx-auto md:max-w-4xl md:px-5 lg:max-w-6xl lg:px-10 lg:gap-20"
+    >
+      <div
+        className={[
+          "order-first flex flex-col justify-between gap-5 md:order-last md:flex-3 md:gap-0 lg:gap-5 lg:p-5",
+          "transition-all duration-2000 ease-out",
+          inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-[30px]",
+        ].join(" ")}
+      >
         <h1 className="text-5xl text-black font-bold">About</h1>
         <div>
           <h1 className="text-xl text-black">
@@ -21,7 +37,15 @@ export const AboutSection: React.FC = () => {
           the culture still lives on.
         </h1>
       </div>
-      <div className="order-last md:order-first md:flex-2 shadow-2xl">
+      <div
+        className={[
+          "order-last md:order-first md:flex-2 shadow-2xl",
+          "transition-all duration-2000 ease-out",
+          inView
+            ? "opacity-100 translate-x-0"
+            : "opacity-0 -translate-x-[30px]",
+        ].join(" ")}
+      >
         <Image
           src={`/intro.jpeg`}
           alt={`intro`}

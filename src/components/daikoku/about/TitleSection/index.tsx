@@ -1,14 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 
-export const CoverSection: React.FC = () => {
-  const [show, setShow] = useState(false);
-  useEffect(() => setShow(true), []);
+export const TitleSection: React.FC = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
   return (
     <div className="relative w-full">
-      <div className="grid grid-cols-1 sm:grid-cols-3">
+      <div ref={ref} className="grid grid-cols-1 sm:grid-cols-3">
         <Image
           src={`/cover_1.jpeg`}
           alt={`cover 1`}
@@ -38,7 +40,9 @@ export const CoverSection: React.FC = () => {
         className={[
           "absolute inset-0 flex items-center justify-center text-white font-bold drop-shadow pointer-events-none text-6xl lg:text-7xl",
           "transition-all duration-2000 ease-out",
-          show ? "opacity-100 translate-x-0" : "opacity-0 translate-x-[-5rem]",
+          inView
+            ? "opacity-100 translate-x-0"
+            : "opacity-0 translate-x-[-5rem]",
         ].join(" ")}
       >
         Start your <br className="md:hidden" />
