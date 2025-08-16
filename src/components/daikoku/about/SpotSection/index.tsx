@@ -13,8 +13,8 @@ export const SpotSection: React.FC = () => {
     <div
       ref={ref}
       className={clsx(
-        "flex flex-col m-10 mx-auto",
-        "md:w-[70rem]",
+        "flex flex-col m-10",
+        "md:w-[70rem] md:mx-auto",
         "transition-all duration-2000 ease-out",
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[30px]",
       )}
