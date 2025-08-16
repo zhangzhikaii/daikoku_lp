@@ -1,5 +1,6 @@
 "use client";
 
+import clsx from "clsx";
 import Image from "next/image";
 import { PropsWithChildren } from "react";
 
@@ -14,7 +15,12 @@ export const Card: React.FC<PropsWithChildren<CardProps>> = ({
   children,
 }) => {
   return (
-    <div className="overflow-hidden md:w-[300px] border-2 border-gray-200 rounded-2xl">
+    <div
+      className={clsx(
+        "overflow-hidden border-2 border-gray-100 rounded-2xl shadow-xl",
+        "md:max-w-[400px] md:w-auto",
+      )}
+    >
       <div className="shrink-0">
         <Image
           src={imageUrl}

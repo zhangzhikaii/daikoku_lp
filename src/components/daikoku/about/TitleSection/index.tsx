@@ -1,22 +1,26 @@
 "use client";
 
+import clsx from "clsx";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 
 export const TitleSection: React.FC = () => {
   const { ref, inView } = useInView({
-    threshold: 0.5,
+    threshold: 0.1,
     triggerOnce: true,
   });
   return (
     <div className="relative w-full">
-      <div ref={ref} className="grid grid-cols-1 sm:grid-cols-3">
+      <div ref={ref} className={clsx("grid grid-cols-1", "sm:grid-cols-3")}>
         <Image
           src={`/cover_1.jpeg`}
           alt={`cover 1`}
           width={1066}
           height={1600}
-          className="hidden sm:block w-full h-auto object-cover pointer-events-none"
+          className={clsx(
+            "hidden w-full h-auto object-cover pointer-events-none",
+            "sm:block",
+          )}
           priority
         />
         <Image
@@ -24,7 +28,10 @@ export const TitleSection: React.FC = () => {
           alt={`cover 2`}
           width={1066}
           height={1600}
-          className="hidden sm:block w-full h-auto object-cover pointer-events-none"
+          className={clsx(
+            "hidden w-full h-auto object-cover pointer-events-none",
+            "sm:block",
+          )}
           priority
         />
         <Image
@@ -37,13 +44,14 @@ export const TitleSection: React.FC = () => {
         />
       </div>
       <h1
-        className={[
-          "absolute inset-0 flex items-center justify-center text-white font-bold drop-shadow pointer-events-none text-6xl lg:text-7xl",
+        className={clsx(
+          "absolute inset-0 flex items-center justify-center text-white font-bold drop-shadow pointer-events-none text-6xl",
+          "lg:text-7xl",
           "transition-all duration-2000 ease-out",
           inView
             ? "opacity-100 translate-x-0"
             : "opacity-0 translate-x-[-5rem]",
-        ].join(" ")}
+        )}
       >
         Start your <br className="md:hidden" />
         JDM tour <br className="md:hidden" />

@@ -1,24 +1,32 @@
 "use client";
 
+import clsx from "clsx";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 
 export const AboutSection: React.FC = () => {
   const { ref, inView } = useInView({
-    threshold: 0.5,
+    threshold: 0.3,
     triggerOnce: true,
   });
   return (
     <div
       ref={ref}
-      className="flex flex-col m-10 gap-10 md:flex-row md:my-40 md:mx-auto md:max-w-4xl md:px-5 lg:max-w-6xl lg:px-10 lg:gap-20"
+      className={clsx(
+        "flex flex-col m-10 gap-10",
+        "md:flex-row md:my-40 md:justify-center",
+        "lg:gap-20",
+      )}
     >
       <div
-        className={[
-          "order-first flex flex-col justify-between gap-5 md:order-last md:flex-3 md:gap-0 lg:gap-5 lg:p-5",
+        className={clsx(
+          "order-first flex flex-col justify-between gap-5",
+          "md:order-last md:max-w-xl",
+          "lg:max-w-2xl lg:p-5",
+          "",
           "transition-all duration-2000 ease-out",
           inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-[30px]",
-        ].join(" ")}
+        )}
       >
         <h1 className="text-5xl text-black font-bold">About</h1>
         <div>
@@ -38,13 +46,14 @@ export const AboutSection: React.FC = () => {
         </h1>
       </div>
       <div
-        className={[
-          "order-last md:order-first md:flex-2 shadow-2xl",
+        className={clsx(
+          "order-last shadow-2xl self-start",
+          "md:order-first md:w-sm",
           "transition-all duration-2000 ease-out",
           inView
             ? "opacity-100 translate-x-0"
             : "opacity-0 -translate-x-[30px]",
-        ].join(" ")}
+        )}
       >
         <Image
           src={`/intro.jpeg`}
