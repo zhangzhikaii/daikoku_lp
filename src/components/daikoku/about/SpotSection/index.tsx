@@ -1,20 +1,20 @@
 "use client";
 
-import { useInView } from "react-intersection-observer";
+// import { useInView } from "react-intersection-observer";
 import { Card } from "../Card";
 
 export const SpotSection: React.FC = () => {
-  const { ref, inView } = useInView({
-    threshold: 0.5,
-    triggerOnce: true,
-  });
+  // const { ref, inView } = useInView({
+  //   threshold: 0.5,
+  //   triggerOnce: true,
+  // });
   return (
     <div
-      ref={ref}
+      // ref={ref}
       className={[
         "m-10 md:m-0 md:w-full lg:px-50 lg:my-20",
         "transition-all duration-2000 ease-out",
-        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[30px]",
+        // inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[30px]",
       ].join(" ")}
     >
       <h1 className="text-5xl text-black font-bold mb-5">Spot</h1>
