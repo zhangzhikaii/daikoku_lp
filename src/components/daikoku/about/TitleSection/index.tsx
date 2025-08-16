@@ -43,20 +43,38 @@ export const TitleSection: React.FC = () => {
           priority
         />
       </div>
-      <h1
+      <div
         className={clsx(
-          "absolute inset-0 flex items-center justify-center text-white font-bold drop-shadow pointer-events-none text-6xl",
-          "lg:text-7xl",
+          "absolute inset-0 flex items-center justify-center",
           "transition-all duration-2000 ease-out",
           inView
             ? "opacity-100 translate-x-0"
             : "opacity-0 translate-x-[-5rem]",
         )}
       >
-        Start your <br className="md:hidden" />
-        JDM tour <br className="md:hidden" />
-        here
-      </h1>
+        <div className="flex flex-col items-start">
+          <h1
+            className={clsx(
+              "pointer-events-none text-white font-bold text-6xl drop-shadow",
+              "lg:text-7xl",
+            )}
+          >
+            Start your <br className="md:hidden" />
+            JDM tour <br className="md:hidden" />
+            here
+          </h1>
+          <button
+            className={clsx(
+              "text-md font-semibold text-black uppercase bg-white py-2 px-3 rounded-md mt-3 opacity-80 border-2 border-gray-100",
+              "transition-all duration-300 ease-out",
+              "hover:bg-transparent hover:text-white hover:opacity-100",
+              "md:text-xl md:px-4 md:mt-5",
+            )}
+          >
+            Book now
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

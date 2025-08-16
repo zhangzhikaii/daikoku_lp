@@ -15,15 +15,16 @@ export const AboutSection: React.FC = () => {
       className={clsx(
         "flex flex-col m-10 gap-10",
         "md:flex-row md:my-40 md:justify-center",
-        "lg:gap-20",
+        "lg:gap-10",
+        "xl:gap-20",
       )}
     >
       <div
         className={clsx(
           "order-first flex flex-col justify-between gap-5",
-          "md:order-last md:max-w-xl",
-          "lg:max-w-2xl lg:p-5",
-          "",
+          "md:order-last md:max-w-sm",
+          "lg:max-w-xl lg:p-5",
+          "xl:max-w-2xl",
           "transition-all duration-2000 ease-out",
           inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-[30px]",
         )}
@@ -48,7 +49,8 @@ export const AboutSection: React.FC = () => {
       <div
         className={clsx(
           "order-last shadow-2xl self-start",
-          "md:order-first md:w-sm",
+          "md:order-first md:w-[300px]",
+          "lg:w-sm",
           "transition-all duration-2000 ease-out",
           inView
             ? "opacity-100 translate-x-0"
