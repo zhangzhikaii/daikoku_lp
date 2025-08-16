@@ -27,7 +27,7 @@ export const SpotSection: React.FC = () => {
           Looking to take your team away on a retreat to enjoy awesome food and
           take in some sunshine? We have a list of places to do just that.
         </Card>
-        <Card title={"Tatsumi PA"} imageUrl={"/tatsumi-4.jpeg"}>
+        <Card title={"Tatsumi PA"} imageUrl={"/tatsumi-2.jpeg"}>
           Looking to take your team away on a retreat to enjoy awesome food and
           take in some sunshine? We have a list of places to do just that.
         </Card>
