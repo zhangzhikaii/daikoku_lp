@@ -63,16 +63,17 @@ export const TitleSection: React.FC = () => {
             JDM tour <br className="md:hidden" />
             here
           </h1>
-          <button
+          <a
             className={clsx(
               "text-md font-semibold text-black uppercase bg-white py-2 px-3 rounded-md mt-3 opacity-80 border-2 border-gray-100",
               "transition-all duration-300 ease-out",
               "hover:bg-transparent hover:text-white hover:opacity-100",
               "md:text-xl md:px-4 md:mt-5",
             )}
+            href={"./booking"}
           >
             Book now
-          </button>
+          </a>
         </div>
       </div>
     </div>

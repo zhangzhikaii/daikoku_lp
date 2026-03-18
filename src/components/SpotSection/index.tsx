@@ -23,15 +23,27 @@ export const SpotSection: React.FC = () => {
     >
       <h1 className="text-5xl text-black font-bold mb-5">Spot</h1>
       <div className={clsx("flex flex-col gap-5", "md:flex-row")}>
-        <Card title={"Daikoku PA"} imageUrl={"/daikoku-4.jpeg"}>
+        <Card
+          title={"Daikoku PA"}
+          imageUrl={"/daikoku-4.jpeg"}
+          pageUrl={"./daikoku"}
+        >
           Looking to take your team away on a retreat to enjoy awesome food and
           take in some sunshine? We have a list of places to do just that.
         </Card>
-        <Card title={"Umihotaru PA"} imageUrl={"/umihotaru.jpeg"}>
+        <Card
+          title={"Umihotaru PA"}
+          imageUrl={"/umihotaru.jpeg"}
+          pageUrl={"./umihotaru"}
+        >
           Looking to take your team away on a retreat to enjoy awesome food and
           take in some sunshine? We have a list of places to do just that.
         </Card>
-        <Card title={"Tatsumi PA"} imageUrl={"/tatsumi-2.jpeg"}>
+        <Card
+          title={"Tatsumi PA"}
+          imageUrl={"/tatsumi-2.jpeg"}
+          pageUrl={"./tatsumi"}
+        >
           Looking to take your team away on a retreat to enjoy awesome food and
           take in some sunshine? We have a list of places to do just that.
         </Card>

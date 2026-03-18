@@ -7,11 +7,13 @@ import { PropsWithChildren } from "react";
 type CardProps = {
   title: string;
   imageUrl: string;
+  pageUrl?: string;
 };
 
 export const Card: React.FC<PropsWithChildren<CardProps>> = ({
   title,
   imageUrl,
+  pageUrl,
   children,
 }) => {
   return (
@@ -36,7 +38,7 @@ export const Card: React.FC<PropsWithChildren<CardProps>> = ({
           {title}
         </div>
         <p className="mt-2 mb-4 text-gray-500">{children}</p>
-        <a href="#" className="text-gray-500 hover:underline">
+        <a href={pageUrl} className="text-gray-500 hover:underline">
           More about {title}→
         </a>
       </div>
