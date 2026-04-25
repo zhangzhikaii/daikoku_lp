@@ -1,4 +1,5 @@
 import { AboutSection } from "@/components/AboutSection";
+import { Footer } from "@/components/Footer";
 import { SpotSection } from "@/components/SpotSection";
 import { TitleSection } from "@/components/TitleSection";
 import { Metadata } from "next";
@@ -14,6 +15,7 @@ export default function AboutPage() {
         <TitleSection />
         <AboutSection />
         <SpotSection />
+        <Footer />
       </main>
     </div>
   );
