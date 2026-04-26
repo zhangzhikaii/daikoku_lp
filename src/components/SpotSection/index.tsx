@@ -15,37 +15,41 @@ export const SpotSection: React.FC = () => {
       className={clsx(
         "flex flex-col m-10",
         "md:w-[45rem] md:mx-auto",
-        "lg:w-[62rem]",
-        "xl:w-[70rem]",
+        "lg:w-auto",
         "transition-all duration-2000 ease-out",
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[30px]",
       )}
     >
-      <h1 className="text-5xl text-black font-bold mb-5">Spot</h1>
+      <h1 className="text-5xl text-black font-bold mb-5">Our offerings</h1>
       <div className={clsx("flex flex-col gap-5", "md:flex-row")}>
         <Card
-          title={"Daikoku PA"}
-          imageUrl={"/daikoku-4.jpeg"}
+          title={"Daikoku PA (Morning)"}
+          imageUrl={"/daikoku-morning-2.jpeg"}
           pageUrl={"./daikoku"}
         >
-          Looking to take your team away on a retreat to enjoy awesome food and
-          take in some sunshine? We have a list of places to do just that.
+          In the calm of the morning, away from the nighttime crowds, watch
+          classic and collector cars gather in Tokyo’s prestigious Meiji Jingu
+          Gaien before setting off on a relaxed cruise toward Daikoku PA.
         </Card>
         <Card
-          title={"Umihotaru PA"}
-          imageUrl={"/umihotaru.jpeg"}
+          title={"Daikoku PA (Night)"}
+          imageUrl={"/daikoku-6.avif"}
           pageUrl={"./umihotaru"}
         >
-          Looking to take your team away on a retreat to enjoy awesome food and
-          take in some sunshine? We have a list of places to do just that.
+          As the city lights come alive, supercars, tuned machines, and street
+          icons gather in one of Japan’s most legendary car meet spots. The
+          atmosphere is electric — engines rev, cameras flash, and every arrival
+          turns heads.
         </Card>
         <Card
-          title={"Tatsumi PA"}
+          title={"Hakone Touge"}
           imageUrl={"/tatsumi-2.jpeg"}
           pageUrl={"./tatsumi"}
         >
-          Looking to take your team away on a retreat to enjoy awesome food and
-          take in some sunshine? We have a list of places to do just that.
+          Leave the city behind and experience the birthplace of Japan’s
+          drifting culture. flowing through winding curves, surrounded by
+          forest, fresh air, and breathtaking views. Each turn reveals a new
+          perspective, each stretch a moment to connect with the road.
         </Card>
       </div>
     </div>
