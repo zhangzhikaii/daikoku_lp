@@ -19,8 +19,10 @@ export const Card: React.FC<PropsWithChildren<CardProps>> = ({
   return (
     <div
       className={clsx(
-        "overflow-hidden border-2 border-gray-100 rounded-2xl shadow-xl",
-        "md:max-w-[400px] md:w-auto",
+        "overflow-hidden border-2 border-gray-200 rounded-2xl shadow-xl ",
+        "md:max-w-[300px] lg:max-w-[360px]",
+        "transition-all duration-200 ease-out",
+        "hover:ring-5 hover:ring-gray-200",
       )}
     >
       <div className="shrink-0">

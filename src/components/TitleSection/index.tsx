@@ -55,12 +55,12 @@ export const TitleSection: React.FC = () => {
         <div className="flex flex-col items-start">
           <h1
             className={clsx(
-              "pointer-events-none text-white font-bold text-6xl drop-shadow",
+              "pointer-events-none text-white font-bold text-4xl drop-shadow",
               "lg:text-7xl",
             )}
           >
-            Start your <br className="md:hidden" />
-            JDM tour <br className="md:hidden" />
+            Start your next <br className="md:hidden" />
+            Tokyo car tour <br className="md:hidden" />
             here
           </h1>
           <a

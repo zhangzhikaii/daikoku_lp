@@ -38,7 +38,7 @@ export const AboutSection: React.FC = () => {
             drawn to high-speed racing and custom car modifications.
           </h1>
           <a href="./daikoku/history" className="text-gray-500 hover:underline">
-            More about underground racing in Tokyo→
+            More about underground racing culture in Tokyo→
           </a>
         </div>
         <h1 className="text-xl text-black">
