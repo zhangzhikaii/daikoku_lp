@@ -133,8 +133,8 @@ export default function CommercialDisclosure() {
                 </h4>
                 <ul className="list-disc pl-5 space-y-1">
                   <li>
-                    Tours operate <strong>&quot;Rain or Shine&quot;</strong>. The car
-                    community is active in all weather conditions.
+                    Tours operate <strong>&quot;Rain or Shine&quot;</strong>.
+                    The car community is active in all weather conditions.
                   </li>
                   <li>
                     If we determine that weather conditions are unsafe (e.g.,
@@ -157,8 +157,8 @@ export default function CommercialDisclosure() {
                   </li>
                   <li>
                     <strong>No-Show:</strong> If the group is not present after
-                    15 minutes, the tour will be marked as a &quot;No-Show&quot; and no
-                    refund will be issued.
+                    15 minutes, the tour will be marked as a &quot;No-Show&quot;
+                    and no refund will be issued.
                   </li>
                 </ul>
               </div>
@@ -180,12 +180,8 @@ function Section({
 }) {
   return (
     <section className="space-y-2">
-      <h3 className="text-lg font-semibold border-b pb-1">
-        {title}
-      </h3>
-      <div className="text-gray-800 leading-relaxed">
-        {children}
-      </div>
+      <h3 className="text-lg font-semibold border-b pb-1">{title}</h3>
+      <div className="text-gray-800 leading-relaxed">{children}</div>
     </section>
   );
 }
