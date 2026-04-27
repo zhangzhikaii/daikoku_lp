@@ -1,5 +1,9 @@
 import Header from "@/components/Header";
 
+export const metadata = {
+  title: "Commercial Disclosure",
+};
+
 export default function CommercialDisclosure() {
   return (
     <>
