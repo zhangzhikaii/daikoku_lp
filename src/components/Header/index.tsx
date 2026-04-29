@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import myIcon from "../../../public/logo.svg";
+import Logo from "../../../public/logo.svg";
 import Link from "next/link";
 
 interface HeaderProps {
@@ -47,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({ variant = "default" }) => {
       >
         <Link href="/">
           <Image
-            src={myIcon}
+            src={Logo}
             alt="Description"
             width={100}
             height={100}
