@@ -4,20 +4,19 @@ import Logo from "../../../public/logo.svg";
 
 export default function Footer() {
   return (
-    <footer className="bg-black">
+    <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Brand */}
         <div className="flex items-center pl-20">
-                  <Link href="/">
-          <Image
-            src={Logo}
-            alt="Description"
-            width={150}
-            height={150}
-            className="hover:opacity-70 transition text-black"
-          />
-        </Link>
-
+          <Link href="/">
+            <Image
+              src={Logo}
+              alt="Description"
+              width={150}
+              height={150}
+              className="hover:opacity-70 transition"
+            />
+          </Link>
         </div>
 
         {/* Links */}
@@ -32,7 +31,10 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/commercial-disclosure" className="hover:text-white transition">
+              <Link
+                href="/commercial-disclosure"
+                className="hover:text-white transition"
+              >
                 Commercial Disclosure
               </Link>
             </li>
@@ -58,7 +60,7 @@ export default function Footer() {
         </div> */}
       </div>
 
-      <div className="border-t border-gray-800 text-center py-4 text-sm text-gray-500">
+      <div className="border-t border-gray-800 text-center py-4 text-sm">
         © {new Date().getFullYear()} Car Life Japan. All rights reserved.
       </div>
     </footer>
