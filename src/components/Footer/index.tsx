@@ -1,39 +1,30 @@
 import Link from "next/link";
-import Image from "next/image";
-import Logo from "../../../public/logo.svg";
+import Logo from "../Logo";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-black">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Brand */}
-        <div className="flex items-center pl-20">
-          <Link href="/">
-            <Image
-              src={Logo}
-              alt="Description"
-              width={150}
-              height={150}
-              className="hover:opacity-70 transition"
-            />
-          </Link>
+        <div className="flex justify-center items-center">
+          <Logo size={150} />
         </div>
 
         {/* Links */}
-        <div>
+        <div className="flex flex-col items-center md:items-start">
           <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
             Navigation
           </h3>
-          <ul className="mt-4 space-y-2">
+          <ul className="mt-4 space-y-2 text-center md:text-left">
             <li>
-              <Link href="/" className="hover:text-white transition">
+              <Link href="/#top" className="hover:underline transition">
                 Home
               </Link>
             </li>
             <li>
               <Link
                 href="/commercial-disclosure"
-                className="hover:text-white transition"
+                className="hover:underline transition"
               >
                 Commercial Disclosure
               </Link>

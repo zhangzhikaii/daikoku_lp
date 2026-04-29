@@ -10,7 +10,7 @@ export const TitleSection: React.FC = () => {
     triggerOnce: true,
   });
   return (
-    <div className="relative w-full">
+    <section className="relative w-full" id="top">
       <div ref={ref} className={clsx("grid grid-cols-1", "sm:grid-cols-3")}>
         <Image
           src={`/cover_1.jpeg`}
@@ -76,6 +76,6 @@ export const TitleSection: React.FC = () => {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

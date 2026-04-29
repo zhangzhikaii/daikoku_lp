@@ -1,15 +1,15 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import Logo from "../../../public/logo.svg";
+import Logo from "../Logo";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-interface HeaderProps {
-  variant?: "home" | "default";
-}
+const Header: React.FC = () => {
+  const pathname = usePathname();
 
-const Header: React.FC<HeaderProps> = ({ variant = "default" }) => {
+  const variant = pathname === "/" ? "home" : "default";
+
   const [visible, setVisible] = useState(variant === "default");
   const [scrolled, setScrolled] = useState(false);
 
@@ -45,22 +45,17 @@ const Header: React.FC<HeaderProps> = ({ variant = "default" }) => {
           ${scrolled ? "shadow-sm" : ""}
         `}
       >
-        <Link href="/">
-          <Image
-            src={Logo}
-            alt="Description"
-            width={100}
-            height={100}
-            className="hover:opacity-70 transition"
-          />
-        </Link>
+        <Logo size={100} />
 
         {/* Nav */}
-        <nav className="space-x-6 font-semibold text-md text-black ">
-          <a href="#" className="hover:opacity-70 transition">
+        <nav className="space-x-6 font-semibold text-md text-black hidden md:block">
+          <Link href="/#about" className="hover:opacity-70 transition">
             About
-          </a>
-          <a href="#" className="hover:opacity-70 transition">
+          </Link>
+          <Link href="/#spot" className="hover:opacity-70 transition">
+            Our offerings
+          </Link>
+          <a href="/contact" className="hover:opacity-70 transition">
             Contact
           </a>
         </nav>

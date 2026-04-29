@@ -10,14 +10,15 @@ export const AboutSection: React.FC = () => {
     triggerOnce: true,
   });
   return (
-    <div
+    <section
       ref={ref}
       className={clsx(
-        "flex flex-col m-10 gap-10",
-        "md:flex-row md:my-40 md:justify-center",
+        "flex flex-col p-10 gap-10",
+        "md:flex-row md:py-30 md:justify-center",
         "lg:gap-10",
         "xl:gap-20",
       )}
+      id="about"
     >
       <div
         className={clsx(
@@ -66,6 +67,6 @@ export const AboutSection: React.FC = () => {
           priority
         />
       </div>
-    </div>
+    </section>
   );
 };
