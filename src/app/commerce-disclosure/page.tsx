@@ -1,14 +1,14 @@
 export const metadata = {
-  title: "Commercial Disclosure",
+  title: "Commerce Disclosure",
 };
 
-export default function CommercialDisclosure() {
+export default function CommerceDisclosure() {
   return (
     <div className="min-h-screen bg-white text-black font-sans px-6 py-36">
       <main className="max-w-2xl mx-auto">
         {/* Title */}
         <header className="mb-12 text-center">
-          <h1 className="text-4xl font-bold mb-2">Commercial Disclosure</h1>
+          <h1 className="text-4xl font-bold mb-2">Commerce Disclosure</h1>
           <h2 className="text-2xl font-semibold text-gray-600">
             特定商取引法に基づく表記
           </h2>
@@ -38,7 +38,7 @@ export default function CommercialDisclosure() {
           </Section>
 
           <Section title="Additional Fees">
-            No additional fees will be incured, as everything (tolls, gas, car)
+            No additional fees will be incurred, as everything (tolls, gas, car)
             are all included in the booking price
           </Section>
 

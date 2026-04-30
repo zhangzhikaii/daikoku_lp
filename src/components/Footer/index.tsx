@@ -11,8 +11,8 @@ export default function Footer() {
         </div>
 
         {/* Links */}
-        <div className="flex flex-col items-center md:items-start">
-          <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
+        <div className="flex flex-col items-center md:items-start text-white">
+          <h3 className="text-sm font-semibold uppercase tracking-wider">
             Navigation
           </h3>
           <ul className="mt-4 space-y-2 text-center md:text-left">
@@ -23,10 +23,10 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                href="/commercial-disclosure"
+                href="/commerce-disclosure"
                 className="hover:underline transition"
               >
-                Commercial Disclosure
+                Commerce Disclosure
               </Link>
             </li>
           </ul>

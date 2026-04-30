@@ -1,0 +1,36 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    "build",
+    "*.log"
+  ],
+  "words": [
+    "tsconfig",
+    "eslint",
+    "prettier",
+    "Pandu",
+    "Daikoku",
+    "shuto",
+    "jingu",
+    "gaien",
+    "supercars",
+    "touge",
+    "tatsumi",
+    "hakone",
+    "majeure"
+  ],
+  "flagWords": [],
+  "overrides": [
+    {
+      "filename": "**/*.ts",
+      "languageId": "typescript"
+    },
+    {
+      "filename": "**/*.tsx",
+      "languageId": "typescriptreact"
+    }
+  ]
+}
