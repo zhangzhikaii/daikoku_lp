@@ -51,7 +51,7 @@ export default function Footer() {
         </div> */}
       </div>
 
-      <div className="border-t border-gray-800 text-center py-4 text-sm">
+      <div className="border-t border-gray-800 text-center text-white py-4 text-sm">
         © {new Date().getFullYear()} Car Life Japan. All rights reserved.
       </div>
     </footer>
