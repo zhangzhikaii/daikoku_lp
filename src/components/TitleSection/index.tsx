@@ -70,7 +70,7 @@ export const TitleSection: React.FC = () => {
               "hover:bg-transparent hover:text-white hover:opacity-100",
               "md:text-xl md:px-4 md:mt-5",
             )}
-            href={"./booking"}
+            href={"/#spot"}
           >
             Book now
           </a>
