@@ -22,7 +22,7 @@ export const Card: React.FC<PropsWithChildren<CardProps>> = ({
   return (
     <div
       className={clsx(
-        "overflow-hidden border-2 border-gray-200 rounded-2xl shadow-xl ",
+        "overflow-hidden border-2 border-gray-200 rounded-2xl shadow-xl h-fit",
         "md:max-w-[300px] lg:max-w-[360px]",
         "transition-all duration-200 ease-out",
         "hover:ring-5 hover:ring-gray-200",
@@ -43,13 +43,14 @@ export const Card: React.FC<PropsWithChildren<CardProps>> = ({
           {title}
         </div>
         <p className="mt-2 mb-4 text-gray-500">{children}</p>
-        {products.map(({ title, url }, i) => (
-          <p key={i}>
-            <a href={url} className="text-gray-500 hover:underline">
-              More about {title}→
-            </a>
-          </p>
-        ))}
+        {products.length > 0 &&
+          products.map(({ title, url }, i) => (
+            <p key={i}>
+              <a href={url} className="text-gray-500 hover:underline">
+                More about {title}→
+              </a>
+            </p>
+          ))}
       </div>
     </div>
   );

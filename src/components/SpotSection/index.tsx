@@ -63,7 +63,7 @@ export const SpotSection: React.FC = () => {
         <Card
           title={"Hakone Touge (Coming soon)"}
           imageUrl={"/tatsumi-2.jpeg"}
-          products={[{ title: "Hakone Touge", url: "./hakone" }]}
+          products={[]}
         >
           Leave the city behind and experience the birthplace of Japan’s
           drifting culture. flowing through winding curves, surrounded by
