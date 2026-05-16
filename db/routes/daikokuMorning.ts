@@ -13,14 +13,14 @@ export const daikokuMorningPoints: Point[] = [
   },
   {
     id: 2,
-    name: "",
+    name: "Car",
     type: "Onboard",
-    description: "an hour drive",
+    description: "(an hour drive)",
   },
   {
     id: 3,
     name: "Tokyo Tower",
-    type: "PassThrough",
+    type: "PassBy",
     position: {
       lat: 35.654693,
       lng: 139.745429,
@@ -30,7 +30,7 @@ export const daikokuMorningPoints: Point[] = [
   {
     id: 4,
     name: "Rainbow Bridge",
-    type: "PassThrough",
+    type: "PassBy",
     position: {
       lat: 35.636782,
       lng: 139.763005,
@@ -49,9 +49,9 @@ export const daikokuMorningPoints: Point[] = [
   },
   {
     id: 6,
-    name: "",
+    name: "Car",
     type: "Onboard",
-    description: "an hour drive back to Shinjuku, Tokyo",
+    description: "(an hour drive)",
   },
   {
     id: 7,
