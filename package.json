@@ -11,9 +11,11 @@
     "static": "next build && next export",
     "start:static": "npx serve out -p 3000",
     "cspell": "cspell \"src/**/*.{ts,tsx}\"",
-    "format:fix": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
+    "format:fix": "prettier --write \"./{src,db}/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "dependencies": {
+    "@next/env": "^16.2.6",
+    "@react-google-maps/api": "^2.20.8",
     "clsx": "^2.1.1",
     "next": "^16.2.3",
     "react": "19.1.0",
