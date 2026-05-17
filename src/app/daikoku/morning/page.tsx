@@ -3,44 +3,27 @@
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import { useMemo } from "react";
 import { daikokuMorningPoints } from "../../../../db/routes/daikokuMorning";
-import { pointType, PointWithPosition } from "@/types/locationPoint";
+import { PointType, pointType, PointWithPosition } from "@/types/locationPoint";
 
 const containerStyle = {
   width: "100%",
   height: "100%",
 };
 
-const markerIcon = {
-  path: `
-    M 12,2
-    A 10,10 0 1,0 12,22
-    A 10,10 0 1,0 12,2
-
-    M 12,7
-    A 5,5 0 1,1 12,17
-    A 5,5 0 1,1 12,7
-  `,
-  fillColor: "#ef4444",
-  fillOpacity: 1,
-  strokeWeight: 0,
-  fillRule: "evenodd",
-  scale: 1.5,
-};
-
 const getTypeColor = (type: PointWithPosition["type"]) => {
   switch (type) {
     case "StartPoint":
-      return "bg-green-500";
+      return "#22c55e";
     case "Destination":
-      return "bg-red-500";
+      return "#ef4444";
     case "StopPoint":
-      return "bg-blue-500";
+      return "#3b82f6";
     case "PassBy":
-      return "bg-neutral-400";
+      return "#a3a3a3";
     case "Onboard":
-      return "bg-yellow-500";
+      return "#eab308";
     default:
-      return "bg-black";
+      return "#000000";
   }
 };
 
@@ -71,7 +54,7 @@ export default function GoogleMapComponent() {
     );
 
     return {
-      lat: total.lat / pointsWithPosition.length,
+      lat: total.lat / pointsWithPosition.length - 0.05,
       lng: total.lng / pointsWithPosition.length,
     };
   }, [pointsWithPosition]);
@@ -89,10 +72,39 @@ export default function GoogleMapComponent() {
     );
   }
 
+  const markerIcon = (pointType: PointType) => {
+    return {
+      url: `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="6.5"
+        fill="${getTypeColor(pointType)}"
+      />
+
+      <circle
+        cx="12"
+        cy="12"
+        r="5"
+        fill="white"
+      />
+    </svg>
+  `)}`,
+      scaledSize: new google.maps.Size(36, 36),
+      anchor: new google.maps.Point(18, 18),
+    };
+  };
+
   return (
-    <div className="min-h-screen bg-neutral-50 text-black font-sans px-4 lg:px-8 py-16">
-      <main className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-6 h-[80vh]">
+    <div className="min-h-screen bg-white text-black px-8 py-16">
+      <main className="max-w-4xl mx-auto my-20">
+        <div className="flex flex-col md:grid md:grid-cols-[300px_1fr] lg:grid-cols-[360px_1fr] gap-6 md:h-[70vh]">
           {/* LEFT ITINERARY */}
           <aside className="bg-white rounded-3xl border border-neutral-200 shadow-sm overflow-hidden flex flex-col">
             <div className="px-5 py-5 border-b border-neutral-100">
@@ -105,17 +117,20 @@ export default function GoogleMapComponent() {
                   <button
                     key={point.id}
                     className={`
-                      w-full text-left px-5 py-4 transition-all border-b border-neutral-100
+                      w-full text-left px-5 pt-2 transition-all
                       hover:bg-neutral-50
                     `}
                   >
                     <div className="flex gap-4">
                       <div className="flex flex-col items-center">
                         <div
-                          className={`w-3 h-3 rounded-full ${getTypeColor(point.type)}`}
+                          className={`w-3 h-3 rounded-full`}
+                          style={{
+                            backgroundColor: getTypeColor(point.type),
+                          }}
                         />
                         {index !== daikokuMorningPoints.length - 1 && (
-                          <div className="w-px flex-1 min-h-[30px] bg-neutral-300 mt-1" />
+                          <div className="w-px flex-1 min-h-[20px] bg-neutral-300 mt-1" />
                         )}
                       </div>
 
@@ -145,7 +160,7 @@ export default function GoogleMapComponent() {
           </aside>
 
           {/* RIGHT MAP */}
-          <section className="rounded-3xl overflow-hidden border border-neutral-200 shadow-sm bg-white">
+          <section className="h-[30vh] md:h-[70vh] rounded-3xl overflow-hidden border border-neutral-200 shadow-sm bg-white">
             <GoogleMap
               mapContainerStyle={containerStyle}
               center={defaultCenter}
@@ -161,7 +176,7 @@ export default function GoogleMapComponent() {
                 <Marker
                   key={point.id}
                   position={point.position}
-                  icon={markerIcon}
+                  icon={markerIcon(point.type)}
                 />
               ))}
             </GoogleMap>
