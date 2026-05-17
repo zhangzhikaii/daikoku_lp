@@ -160,7 +160,7 @@ export default function GoogleMapComponent() {
           </aside>
 
           {/* RIGHT MAP */}
-          <section className="h-[30vh] md:h-[70vh] rounded-3xl overflow-hidden border border-neutral-200 shadow-sm bg-white">
+          <section className="h-[70vh] rounded-3xl overflow-hidden border border-neutral-200 shadow-sm bg-white">
             <GoogleMap
               mapContainerStyle={containerStyle}
               center={defaultCenter}
