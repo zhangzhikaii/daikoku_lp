@@ -11,7 +11,7 @@
     "static": "next build && next export",
     "start:static": "npx serve out -p 3000",
     "cspell": "cspell \"src/**/*.{ts,tsx}\"",
-    "format:fix": "prettier --write \"./{src,db}/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
+    "format:fix": "prettier --write \"./{src,db,.github}/**/*.{js,jsx,ts,tsx,json,css,scss,md,yml}\""
   },
   "dependencies": {
     "@next/env": "^16.2.6",
