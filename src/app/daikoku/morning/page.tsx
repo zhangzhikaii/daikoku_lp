@@ -186,7 +186,9 @@ export default function GoogleMapComponent() {
                 defaultCenter={defaultCenter}
                 defaultZoom={11}
                 gestureHandling="greedy"
-                disableDefaultUI={false}
+                disableDefaultUI
+                clickableIcons={false}
+                keyboardShortcuts={false}
                 mapId={process.env.NEXT_PUBLIC_GOOGLE_MAP_API_ID ?? ""}
               >
                 {pointsWithPosition.map((point) => (
