@@ -24,13 +24,9 @@ const getTypeColor = (type: PointWithPosition["type"]) => {
 
 function MarkerContent({ type }: { type: PointType }) {
   return (
-    <div className="relative">
+    <div className="relative translate-y-1/2">
       <div
-        className="
-          w-5 h-5 rounded-full
-          border-[5px] border-white
-          shadow-md
-        "
+        className="w-4 h-4 rounded-full border-[1px] border-white shadow-md"
         style={{
           backgroundColor: getTypeColor(type),
         }}
@@ -77,25 +73,9 @@ export default function GoogleMapComponent() {
     <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY ?? ""}>
       <div className="min-h-screen bg-white text-black px-8 py-16">
         <main className="max-w-4xl mx-auto my-20">
-          <div
-            className="
-              flex flex-col
-              md:grid
-              md:grid-cols-[300px_1fr]
-              lg:grid-cols-[360px_1fr]
-              gap-6
-              md:h-[70vh]
-            "
-          >
+          <div className="flex flex-col md:grid md:grid-cols-[300px_1fr] lg:grid-cols-[360px_1fr] gap-6 md:h-[70vh]">
             {/* LEFT */}
-            <aside
-              className="
-                bg-white rounded-3xl
-                border border-neutral-200
-                shadow-sm overflow-hidden
-                flex flex-col
-              "
-            >
+            <aside className="bg-white rounded-3xl border border-neutral-200 shadow-sm overflow-hidden flex flex-col">
               <div className="px-5 py-5 border-b border-neutral-100">
                 <h2 className="text-2xl font-semibold">Route</h2>
               </div>
@@ -122,44 +102,23 @@ export default function GoogleMapComponent() {
                           />
 
                           {index !== daikokuMorningPoints.length - 1 && (
-                            <div
-                              className="
-                                  w-px flex-1
-                                  min-h-[20px]
-                                  bg-neutral-300 mt-1
-                                "
-                            />
+                            <div className="w-px flex-1 min-h-[20px] bg-neutral-300 mt-1" />
                           )}
                         </div>
 
                         <div className="flex-1 pb-2">
-                          <div
-                            className="
-                                flex items-center
-                                justify-between gap-3
-                              "
-                          >
+                          <div className="flex items-center justify-between gap-3">
                             <h3 className="font-semibold text-base">
                               {point.name}
                             </h3>
 
-                            <span
-                              className="
-                                  text-xs text-neutral-500
-                                  whitespace-nowrap
-                                "
-                            >
+                            <span className="text-xs text-neutral-500 whitespace-nowrap">
                               {pointType[point.type]}
                             </span>
                           </div>
 
                           {point.description && (
-                            <p
-                              className="
-                                  text-sm text-neutral-600
-                                  mt-1 leading-relaxed
-                                "
-                            >
+                            <p className="text-sm text-neutral-600 mt-1 leading-relaxed">
                               {point.description}
                             </p>
                           )}
@@ -172,16 +131,7 @@ export default function GoogleMapComponent() {
             </aside>
 
             {/* MAP */}
-            <section
-              className="
-                h-[70vh]
-                rounded-3xl
-                overflow-hidden
-                border border-neutral-200
-                shadow-sm
-                bg-white
-              "
-            >
+            <section className="h-[70vh] rounded-3xl overflow-hidden border border-neutral-200 shadow-sm bg-white">
               <Map
                 defaultCenter={defaultCenter}
                 defaultZoom={11}
