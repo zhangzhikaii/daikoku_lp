@@ -22,6 +22,7 @@ jobs:
 
     env:
       NEXT_PUBLIC_GOOGLE_MAP_API_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_MAP_API_KEY }}
+      NEXT_PUBLIC_GOOGLE_MAP_API_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_MAP_API_ID }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
