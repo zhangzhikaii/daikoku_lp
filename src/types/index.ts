@@ -28,3 +28,15 @@ export const pointType: Record<PointType, string> = {
   Destination: "Arrive back at",
   Onboard: "",
 };
+
+export type ProductLink = {
+  title: string;
+  url: string;
+};
+
+export type Activity = {
+  title: string;
+  imageUrl: string;
+  products: ProductLink[];
+  shortDescription: string;
+};

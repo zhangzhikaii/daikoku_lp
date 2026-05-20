@@ -3,7 +3,7 @@
 import { APIProvider, Map, AdvancedMarker } from "@vis.gl/react-google-maps";
 import { useMemo } from "react";
 import { daikokuMorningPoints } from "../../../../db/routes/daikokuMorning";
-import { PointType, pointType, PointWithPosition } from "@/types/locationPoint";
+import { PointType, pointType, PointWithPosition } from "@/types";
 
 const getTypeColor = (type: PointWithPosition["type"]) => {
   switch (type) {
