@@ -4,6 +4,7 @@ import { APIProvider, Map, AdvancedMarker } from "@vis.gl/react-google-maps";
 import { useMemo } from "react";
 import { daikokuMorningPoints } from "../../../../db/routes/daikokuMorning";
 import { PointType, pointType, PointWithPosition } from "@/types";
+import MarkerIcon from "@/components/Marker";
 
 const getTypeColor = (type: PointWithPosition["type"]) => {
   switch (type) {
@@ -23,16 +24,27 @@ const getTypeColor = (type: PointWithPosition["type"]) => {
 };
 
 function MarkerContent({ type }: { type: PointType }) {
-  return (
-    <div className="relative translate-y-1/2">
-      <div
-        className="w-4 h-4 rounded-full border-[1px] border-white shadow-md"
-        style={{
-          backgroundColor: getTypeColor(type),
-        }}
-      />
-    </div>
-  );
+  switch (type) {
+    case "PassBy":
+      return (
+        <div className="relative translate-y-1/2">
+          <div
+            className="w-5 h-5 rounded-full border-[1px] border-white shadow-md"
+            style={{
+              backgroundColor: getTypeColor(type),
+            }}
+          />
+        </div>
+      );
+    case "StartPoint":
+      return <MarkerIcon text="S" color={getTypeColor(type)} size={36} />;
+    case "Destination":
+      return <MarkerIcon text="E" color={getTypeColor(type)} size={36} />;
+    case "StopPoint":
+      return <MarkerIcon text="1" color={getTypeColor(type)} size={36} />;
+    default:
+      return null;
+  }
 }
 
 export default function GoogleMapComponent() {
