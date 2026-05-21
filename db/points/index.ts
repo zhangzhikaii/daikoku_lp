@@ -29,3 +29,8 @@ export const shinkukuStationEastPosition: Position = {
   lat: 35.692658,
   lng: 139.700556,
 };
+
+export const meijiJinguGaienPosition: Position = {
+  lat: 35.673087,
+  lng: 139.720396,
+};

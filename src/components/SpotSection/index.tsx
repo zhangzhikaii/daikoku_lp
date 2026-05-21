@@ -29,7 +29,7 @@ export const SpotSection: React.FC = () => {
             <Card
               title={activity.title}
               imageUrl={activity.imageUrl}
-              products={activity.products}
+              options={activity.options}
               key={i}
             >
               {activity.shortDescription}

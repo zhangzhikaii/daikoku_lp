@@ -1,5 +1,6 @@
 "use client";
 
+import { Optioin } from "@/types";
 import clsx from "clsx";
 import Image from "next/image";
 import { PropsWithChildren } from "react";
@@ -7,16 +8,13 @@ import { PropsWithChildren } from "react";
 type CardProps = {
   title: string;
   imageUrl: string;
-  products: {
-    title: string;
-    url: string;
-  }[];
+  options: Optioin[];
 };
 
 export const Card: React.FC<PropsWithChildren<CardProps>> = ({
   title,
   imageUrl,
-  products,
+  options,
   children,
 }) => {
   return (
@@ -43,8 +41,8 @@ export const Card: React.FC<PropsWithChildren<CardProps>> = ({
           {title}
         </div>
         <p className="mt-2 mb-4 text-gray-500">{children}</p>
-        {products.length > 0 &&
-          products.map(({ title, url }, i) => (
+        {options.length > 0 &&
+          options.map(({ title, url }, i) => (
             <p key={i}>
               <a href={url} className="text-gray-500 hover:underline">
                 More about {title}→

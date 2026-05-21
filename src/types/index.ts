@@ -14,24 +14,15 @@ type PositionPoint<T extends PointType> = BasePoint<T> & {
   position: Position;
 };
 
-type PassByPoint = PositionPoint<"PassByPoint">;
 type StopPoint = PositionPoint<"StopPoint"> & { showId: string };
-type StartPoint = PositionPoint<"StartPoint">;
-type DestinationPoint = PositionPoint<"DestinationPoint">;
-type Onboard = BasePoint<"Onboard">;
 
 export type PointWithPosition =
-  | PassByPoint
+  | PositionPoint<"PassByPoint">
   | StopPoint
-  | StartPoint
-  | DestinationPoint;
+  | PositionPoint<"StartPoint">
+  | PositionPoint<"DestinationPoint">;
 
-export type Point =
-  | PassByPoint
-  | StopPoint
-  | StartPoint
-  | DestinationPoint
-  | Onboard;
+export type Point = PointWithPosition | BasePoint<"Onboard">;
 
 export type PointType =
   | "PassByPoint"
@@ -48,14 +39,21 @@ export const pointType: Record<PointType, string> = {
   Onboard: "",
 };
 
-export type ProductLink = {
+export type Optioin = {
   title: string;
   url: string;
+  imageUrl?: string;
+};
+
+export type Price = {
+  discountPrice?: number;
+  basePrice: number;
 };
 
 export type Activity = {
   title: string;
   imageUrl: string;
-  products: ProductLink[];
+  options: Optioin[];
   shortDescription: string;
+  price?: Price;
 };
