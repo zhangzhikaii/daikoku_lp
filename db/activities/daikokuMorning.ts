@@ -1,14 +1,18 @@
 import { Activity, Point } from "@/types";
+import {
+  daikokuPosition,
+  hotelStartPosition,
+  rainbowBridgePosition,
+  shinkukuStationEastPosition,
+  tokyoTowerPosition,
+} from "../points";
 
 export const daikokuMorningPoints: Point[] = [
   {
     id: 1,
     name: "Shinjuku",
     type: "StartPoint",
-    position: {
-      lat: 35.690896,
-      lng: 139.690778,
-    },
+    position: hotelStartPosition,
     description: "meet your guide, have a brief of the tour",
   },
   {
@@ -20,31 +24,23 @@ export const daikokuMorningPoints: Point[] = [
   {
     id: 3,
     name: "Tokyo Tower",
-    type: "PassBy",
-    position: {
-      lat: 35.654693,
-      lng: 139.745429,
-    },
+    type: "PassByPoint",
+    position: tokyoTowerPosition,
     description: "",
   },
   {
     id: 4,
     name: "Rainbow Bridge",
-    type: "PassBy",
-    position: {
-      lat: 35.636782,
-      lng: 139.763005,
-    },
+    type: "PassByPoint",
+    position: rainbowBridgePosition,
     description: "",
   },
   {
     id: 5,
     name: "Daikoku PA",
     type: "StopPoint",
-    position: {
-      lat: 35.461683,
-      lng: 139.680226,
-    },
+    showId: "1",
+    position: daikokuPosition,
     description: "Stay here to experience the car meet for an hour",
   },
   {
@@ -56,11 +52,8 @@ export const daikokuMorningPoints: Point[] = [
   {
     id: 7,
     name: "Shinjuku",
-    type: "Destination",
-    position: {
-      lat: 35.692658,
-      lng: 139.700556,
-    },
+    type: "DestinationPoint",
+    position: shinkukuStationEastPosition,
     description: "say goodbye with your guide",
   },
 ];

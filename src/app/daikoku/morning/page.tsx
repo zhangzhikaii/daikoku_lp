@@ -2,19 +2,20 @@
 
 import { APIProvider, Map, AdvancedMarker } from "@vis.gl/react-google-maps";
 import { useMemo } from "react";
-import { daikokuMorningPoints } from "../../../../db/routes/daikokuMorning";
+import { daikokuMorningPoints } from "../../../../db/activities/daikokuMorning";
 import { PointType, pointType, PointWithPosition } from "@/types";
 import MarkerIcon from "@/components/Marker";
+import { tokyoPosition } from "../../../../db/points";
 
-const getTypeColor = (type: PointWithPosition["type"]) => {
+const getTypeColor = (type: PointType) => {
   switch (type) {
     case "StartPoint":
       return "#22c55e";
-    case "Destination":
+    case "DestinationPoint":
       return "#ef4444";
     case "StopPoint":
       return "#3b82f6";
-    case "PassBy":
+    case "PassByPoint":
       return "#a3a3a3";
     case "Onboard":
       return "#eab308";
@@ -23,9 +24,10 @@ const getTypeColor = (type: PointWithPosition["type"]) => {
   }
 };
 
-function MarkerContent({ type }: { type: PointType }) {
+function MarkerContent({ point }: { point: PointWithPosition }) {
+  const { type } = point;
   switch (type) {
-    case "PassBy":
+    case "PassByPoint":
       return (
         <div className="relative translate-y-1/2">
           <div
@@ -38,10 +40,12 @@ function MarkerContent({ type }: { type: PointType }) {
       );
     case "StartPoint":
       return <MarkerIcon text="S" color={getTypeColor(type)} size={36} />;
-    case "Destination":
+    case "DestinationPoint":
       return <MarkerIcon text="E" color={getTypeColor(type)} size={36} />;
     case "StopPoint":
-      return <MarkerIcon text="1" color={getTypeColor(type)} size={36} />;
+      return (
+        <MarkerIcon text={point.showId} color={getTypeColor(type)} size={36} />
+      );
     default:
       return null;
   }
@@ -53,17 +57,13 @@ export default function GoogleMapComponent() {
       if ("position" in point) {
         acc.push(point);
       }
-
       return acc;
     }, []);
   }, []);
 
   const defaultCenter = useMemo(() => {
     if (pointsWithPosition.length === 0) {
-      return {
-        lat: 35.6809591,
-        lng: 139.7673068,
-      };
+      return tokyoPosition;
     }
 
     const total = pointsWithPosition.reduce(
@@ -155,7 +155,7 @@ export default function GoogleMapComponent() {
               >
                 {pointsWithPosition.map((point) => (
                   <AdvancedMarker key={point.id} position={point.position}>
-                    <MarkerContent type={point.type} />
+                    <MarkerContent point={point} />
                   </AdvancedMarker>
                 ))}
               </Map>

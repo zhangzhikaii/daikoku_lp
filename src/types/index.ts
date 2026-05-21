@@ -1,31 +1,50 @@
-export type BasePoint = {
+type BasePoint<T extends PointType> = {
   id: number;
   name: string;
-  type: PointType;
+  type: T;
   description?: string;
 };
 
-export type PointWithPosition = BasePoint & {
-  position: {
-    lat: number;
-    lng: number;
-  };
+export type Position = {
+  lat: number;
+  lng: number;
 };
 
-export type Point = BasePoint | PointWithPosition;
+type PositionPoint<T extends PointType> = BasePoint<T> & {
+  position: Position;
+};
+
+type PassByPoint = PositionPoint<"PassByPoint">;
+type StopPoint = PositionPoint<"StopPoint"> & { showId: string };
+type StartPoint = PositionPoint<"StartPoint">;
+type DestinationPoint = PositionPoint<"DestinationPoint">;
+type Onboard = BasePoint<"Onboard">;
+
+export type PointWithPosition =
+  | PassByPoint
+  | StopPoint
+  | StartPoint
+  | DestinationPoint;
+
+export type Point =
+  | PassByPoint
+  | StopPoint
+  | StartPoint
+  | DestinationPoint
+  | Onboard;
 
 export type PointType =
-  | "PassBy"
+  | "PassByPoint"
   | "StopPoint"
   | "StartPoint"
-  | "Destination"
+  | "DestinationPoint"
   | "Onboard";
 
 export const pointType: Record<PointType, string> = {
-  PassBy: "Pass by",
+  PassByPoint: "Pass by",
   StopPoint: "Main stop",
   StartPoint: "Starting location",
-  Destination: "Arrive back at",
+  DestinationPoint: "Arrive back at",
   Onboard: "",
 };
 

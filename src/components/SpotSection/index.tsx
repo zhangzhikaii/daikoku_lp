@@ -3,7 +3,7 @@
 import { useInView } from "react-intersection-observer";
 import { Card } from "../Card";
 import clsx from "clsx";
-import { activities } from "../../../db/routes";
+import { activities } from "../../../db/activities";
 
 export const SpotSection: React.FC = () => {
   const { ref, inView } = useInView({
