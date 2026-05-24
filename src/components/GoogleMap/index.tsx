@@ -4,7 +4,7 @@ import { APIProvider, Map, AdvancedMarker } from "@vis.gl/react-google-maps";
 import { useMemo } from "react";
 import { Activity, PointType, pointType, PointWithPosition } from "@/types";
 import MarkerIcon from "@/components/Marker";
-import { tokyoPosition } from "../../../db/points";
+import { tokyoPosition } from "@/db/points";
 
 const getTypeColor = (type: PointType) => {
   switch (type) {
