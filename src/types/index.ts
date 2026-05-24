@@ -52,6 +52,7 @@ export type Price = {
 };
 
 export type Activity = {
+  id: string;
   title: string;
   imageUrl: string;
   options: Optioin[];

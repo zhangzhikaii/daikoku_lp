@@ -87,6 +87,7 @@ export const daikokuNightOptions: Optioin[] = [
 ];
 
 export const daikokuNight: Activity = {
+  id: "daikokuNight",
   title: "Daikoku PA (Night)",
   imageUrl: "/daikoku-6.avif",
   options: daikokuNightOptions,

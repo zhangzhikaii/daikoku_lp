@@ -83,6 +83,7 @@ export const daikokuMorningOptions: Optioin[] = [
 ];
 
 export const daikokuMorning: Activity = {
+  id: "daikokuMorning",
   title: "Daikoku PA (Morning)",
   imageUrl: "/daikoku-morning-2.jpeg",
   points: daikokuMorningPoints,

@@ -1,6 +1,7 @@
 import { Activity } from "@/types";
 
 export const hakone: Activity = {
+  id: "hakone",
   title: "Hakone Touge (Coming soon)",
   imageUrl: "/tatsumi-2.jpeg",
   points: [],
