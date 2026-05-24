@@ -41,6 +41,7 @@ export const pointType: Record<PointType, string> = {
 
 export type Optioin = {
   title: string;
+  shortDescription: string;
   url: string;
   imageUrl?: string;
 };
@@ -55,5 +56,6 @@ export type Activity = {
   imageUrl: string;
   options: Optioin[];
   shortDescription: string;
+  points: Point[];
   price?: Price;
 };

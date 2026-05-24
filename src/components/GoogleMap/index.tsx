@@ -2,7 +2,7 @@
 
 import { APIProvider, Map, AdvancedMarker } from "@vis.gl/react-google-maps";
 import { useMemo } from "react";
-import { Point, PointType, pointType, PointWithPosition } from "@/types";
+import { Activity, PointType, pointType, PointWithPosition } from "@/types";
 import MarkerIcon from "@/components/Marker";
 import { tokyoPosition } from "../../../db/points";
 
@@ -50,7 +50,13 @@ function MarkerContent({ point }: { point: PointWithPosition }) {
   }
 }
 
-export default function GoogleMapComponent({ points }: { points: Point[] }) {
+type Props = {
+  activity: Activity;
+};
+
+export default function GoogleMapComponent({ activity }: Props) {
+  const { points, options } = activity;
+
   const pointsWithPosition = useMemo(() => {
     return points.reduce<PointWithPosition[]>((acc, point) => {
       if ("position" in point) {
@@ -83,7 +89,7 @@ export default function GoogleMapComponent({ points }: { points: Point[] }) {
   return (
     <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY ?? ""}>
       <div className="min-h-screen bg-white text-black px-8 py-16">
-        <main className="max-w-4xl mx-auto my-20">
+        <div className="max-w-4xl mx-auto my-20">
           <div className="flex flex-col md:grid md:grid-cols-[300px_1fr] lg:grid-cols-[360px_1fr] gap-6 md:h-[70vh]">
             {/* LEFT */}
             <aside className="bg-white rounded-3xl border border-neutral-200 shadow-sm overflow-hidden flex flex-col">
@@ -160,7 +166,7 @@ export default function GoogleMapComponent({ points }: { points: Point[] }) {
               </Map>
             </section>
           </div>
-        </main>
+        </div>
       </div>
     </APIProvider>
   );

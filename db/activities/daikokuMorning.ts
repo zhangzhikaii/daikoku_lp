@@ -1,4 +1,4 @@
-import { Activity, Point } from "@/types";
+import { Activity, Optioin, Point } from "@/types";
 import {
   daikokuPosition,
   hotelStartPosition,
@@ -73,15 +73,20 @@ export const daikokuMorningPoints: Point[] = [
   },
 ];
 
+export const daikokuMorningOptions: Optioin[] = [
+  {
+    title: "Daikoku PA (Morning)",
+    imageUrl: "/noah.png",
+    shortDescription: "Morning Daikoku PA Car Meet Visit",
+    url: "https://carlifejapan.rezdy.com/763018/morning-daikoku-pa-car-meet-visit?_gl=1*1r6fjxd*_gcl_au*MTc1NjU2MTE0OS4xNzc4MDY3Mzk1LjEyNzk1MDgyODAuMTc3ODA3NTM0Ny4xNzc4MDc1MzQ2*_ga*MTE4NTMzODc0NS4xNzc3MTMwMzQz*_ga_J7SXS0R0D6*czE3NzgwNjczMTkkbzckZzEkdDE3NzgwNzU0ODUkajQ5JGwwJGg0NjMwOTk5Njk",
+  },
+];
+
 export const daikokuMorning: Activity = {
   title: "Daikoku PA (Morning)",
   imageUrl: "/daikoku-morning-2.jpeg",
-  options: [
-    {
-      title: "Daikoku PA (Morning)",
-      url: "https://carlifejapan.rezdy.com/763018/morning-daikoku-pa-car-meet-visit?_gl=1*1r6fjxd*_gcl_au*MTc1NjU2MTE0OS4xNzc4MDY3Mzk1LjEyNzk1MDgyODAuMTc3ODA3NTM0Ny4xNzc4MDc1MzQ2*_ga*MTE4NTMzODc0NS4xNzc3MTMwMzQz*_ga_J7SXS0R0D6*czE3NzgwNjczMTkkbzckZzEkdDE3NzgwNzU0ODUkajQ5JGwwJGg0NjMwOTk5Njk",
-    },
-  ],
+  points: daikokuMorningPoints,
+  options: daikokuMorningOptions,
   price: { basePrice: 11500 },
   shortDescription:
     "In the calm of the morning, away from the nighttime crowds, watch classic and collector cars gather in Tokyo’s prestigious Meiji Jingu Gaien before setting off on a relaxed cruise toward Daikoku PA.",
