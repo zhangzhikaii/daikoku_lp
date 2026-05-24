@@ -1,5 +1,8 @@
-import { redirect } from "next/navigation";
+"use client";
 
-export default function Home() {
-  redirect("/coming-soon");
+import GoogleMapComponent from "@/components/GoogleMap";
+import { daikokuNightPoints } from "../../../../db/activities/daikokuNight";
+
+export default function DaikokuNight() {
+  return <GoogleMapComponent points={daikokuNightPoints} />;
 }
