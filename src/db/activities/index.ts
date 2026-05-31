@@ -11,7 +11,7 @@ export const getProduct = (id: string): Activity | undefined => {
       return daikokuMorning;
     case "daikokuNight":
       return daikokuNight;
-    // case "hakone":
-    //   return hakone;
+    case "hakone":
+      return hakone;
   }
 };

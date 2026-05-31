@@ -43,7 +43,7 @@ export type Optioin = {
   title: string;
   shortDescription: string;
   url: string;
-  imageUrl?: string;
+  imageUrl: string;
 };
 
 export type Price = {

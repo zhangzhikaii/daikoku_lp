@@ -25,16 +25,7 @@ export const SpotSection: React.FC = () => {
       <h1 className="text-5xl text-black font-bold mb-5">Our offerings</h1>
       <div className={clsx("flex flex-col gap-5", "md:flex-row")}>
         {activities.map((activity, i) => {
-          return (
-            <Card
-              title={activity.title}
-              imageUrl={activity.imageUrl}
-              options={activity.options}
-              key={i}
-            >
-              {activity.shortDescription}
-            </Card>
-          );
+          return <Card activity={activity} key={i} />;
         })}
       </div>
     </section>

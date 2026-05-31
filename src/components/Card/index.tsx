@@ -1,35 +1,29 @@
 "use client";
 
-import { Optioin } from "@/types";
+import { Activity } from "@/types";
 import clsx from "clsx";
 import Image from "next/image";
-import { PropsWithChildren } from "react";
+import Link from "next/link";
 
-type CardProps = {
-  title: string;
-  imageUrl: string;
-  options: Optioin[];
+type Props = {
+  activity: Activity;
 };
 
-export const Card: React.FC<PropsWithChildren<CardProps>> = ({
-  title,
-  imageUrl,
-  options,
-  children,
-}) => {
+export const Card: React.FC<Props> = ({ activity }) => {
   return (
-    <div
+    <Link
       className={clsx(
         "overflow-hidden border-2 border-gray-200 rounded-2xl shadow-xl h-fit",
         "md:max-w-[300px] lg:max-w-[360px]",
         "transition-all duration-200 ease-out",
         "hover:ring-5 hover:ring-gray-200",
       )}
+      href={`./activity/${activity.id}`}
     >
       <div className="shrink-0">
         <Image
-          src={imageUrl}
-          alt={imageUrl}
+          src={activity.imageUrl}
+          alt={activity.imageUrl}
           width={1066}
           height={1600}
           className="w-full h-[250px] object-cover pointer-events-none"
@@ -38,18 +32,10 @@ export const Card: React.FC<PropsWithChildren<CardProps>> = ({
       </div>
       <div className="py-8 px-6">
         <div className="text-md font-semibold tracking-wide text-black uppercase">
-          {title}
+          {activity.title}
         </div>
-        <p className="mt-2 mb-4 text-gray-500">{children}</p>
-        {options.length > 0 &&
-          options.map(({ title, url }, i) => (
-            <p key={i}>
-              <a href={url} className="text-gray-500 hover:underline">
-                More about {title}→
-              </a>
-            </p>
-          ))}
+        <p className="mt-2 mb-4 text-gray-500">{activity.shortDescription}</p>
       </div>
-    </div>
+    </Link>
   );
 };

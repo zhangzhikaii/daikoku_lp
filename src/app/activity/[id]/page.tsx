@@ -1,7 +1,7 @@
-import GoogleMapComponent from "@/components/GoogleMap";
+import { ActivityPageTemplate } from "@/components/ActivityPageTemplate";
 import { activities, getProduct } from "@/db/activities";
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { cache } from "react";
 
 type Props = {
@@ -35,5 +35,7 @@ export default async function ProductPage({ params }: Props) {
 
   if (!product) notFound();
 
-  return <GoogleMapComponent activity={product} />;
+  if (product.id === "hakone") redirect("/coming-soon");
+
+  return <ActivityPageTemplate product={product} />;
 }

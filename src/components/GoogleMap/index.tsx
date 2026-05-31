@@ -55,7 +55,7 @@ type Props = {
 };
 
 export default function GoogleMapComponent({ activity }: Props) {
-  const { points, options } = activity;
+  const { points } = activity;
 
   const pointsWithPosition = useMemo(() => {
     return points.reduce<PointWithPosition[]>((acc, point) => {
@@ -88,26 +88,23 @@ export default function GoogleMapComponent({ activity }: Props) {
 
   return (
     <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY ?? ""}>
-      <div className="min-h-screen bg-white text-black px-8 py-16">
-        <div className="max-w-4xl mx-auto my-20">
+      <div className="bg-white text-black">
+        <div className="max-w-4xl mx-auto my-5">
           <div className="flex flex-col md:grid md:grid-cols-[300px_1fr] lg:grid-cols-[360px_1fr] gap-6 md:h-[70vh]">
             {/* LEFT */}
             <aside className="bg-white rounded-3xl border border-neutral-200 shadow-sm overflow-hidden flex flex-col">
-              <div className="px-5 py-5 border-b border-neutral-100">
-                <h2 className="text-2xl font-semibold">Route</h2>
-              </div>
-
               <div className="overflow-y-auto flex-1">
                 {points.map((point, index) => {
                   return (
                     <button
                       key={point.id}
-                      className="
+                      className={`
                           w-full text-left
-                          px-5 pt-2
+                          px-5 py-2
                           transition-all
                           hover:bg-neutral-50
-                        "
+                          ${index === 0 && "pt-4"}
+                        `}
                     >
                       <div className="flex gap-4">
                         <div className="flex flex-col items-center">
