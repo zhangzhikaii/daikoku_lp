@@ -25,7 +25,7 @@ export const OptionCard: React.FC<Props> = ({ option }) => {
           alt={option.imageUrl}
           width={20}
           height={20}
-          className="h-24 w-fit object-cover pointer-events-none"
+          className="h-fit w-36 object-cover pointer-events-none"
           priority
         />
       </div>
