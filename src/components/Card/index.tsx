@@ -10,6 +10,8 @@ type Props = {
 };
 
 export const Card: React.FC<Props> = ({ activity }) => {
+  const { id, imageUrl, title, shortDescription, price } = activity;
+
   return (
     <Link
       className={clsx(
@@ -18,12 +20,12 @@ export const Card: React.FC<Props> = ({ activity }) => {
         "transition-all duration-200 ease-out",
         "hover:ring-5 hover:ring-gray-200",
       )}
-      href={`./activity/${activity.id}`}
+      href={`./activity/${id}`}
     >
       <div className="shrink-0">
         <Image
-          src={activity.imageUrl}
-          alt={activity.imageUrl}
+          src={imageUrl}
+          alt={imageUrl}
           width={1066}
           height={1600}
           className="w-full h-[250px] object-cover pointer-events-none"
@@ -32,9 +34,33 @@ export const Card: React.FC<Props> = ({ activity }) => {
       </div>
       <div className="py-8 px-6">
         <div className="text-md font-semibold tracking-wide text-black uppercase">
-          {activity.title}
+          {title}
         </div>
-        <p className="mt-2 mb-4 text-gray-500">{activity.shortDescription}</p>
+        <p className="mt-2 mb-4 text-gray-500">{shortDescription}</p>
+        <div className="flex justify-end">
+          {price != null &&
+            (() => {
+              const { basePrice, discountPrice } = price;
+
+              return (
+                <div className="flex text-gray-600 text-md items-end gap-2">
+                  From
+                  {discountPrice != null && (
+                    <span className="line-through">
+                      ¥{basePrice.toLocaleString()}
+                    </span>
+                  )}
+                  <span
+                    className={`font-semibold text-xl ${
+                      discountPrice != null ? "text-red-700" : "text-gray-900"
+                    }`}
+                  >
+                    ¥{(discountPrice ?? basePrice).toLocaleString()}
+                  </span>
+                </div>
+              );
+            })()}
+        </div>
       </div>
     </Link>
   );

@@ -92,7 +92,7 @@ export const daikokuNight: Activity = {
   imageUrl: "/daikoku-6.avif",
   options: daikokuNightOptions,
   points: daikokuNightPoints,
-  price: { basePrice: 11500 },
+  price: { basePrice: 13500, discountPrice: 10800 },
   shortDescription:
     "As the city lights come alive, supercars, tuned machines, and street icons gather in one of Japan’s most legendary car meet spots. The atmosphere is electric — engines rev, cameras flash, and every arrival turns heads.",
 };
