@@ -44,6 +44,7 @@ export type Optioin = {
   shortDescription: string;
   url: string;
   imageUrl: string;
+  price: Price;
 };
 
 export type Price = {

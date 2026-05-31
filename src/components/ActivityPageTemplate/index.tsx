@@ -38,6 +38,7 @@ export const ActivityPageTemplate: React.FC<Props> = ({ product }) => {
 
       <div className="mt-12">
         <h2 className="text-3xl font-bold mb-2">Options</h2>
+        <h4>Select an option to view availability and make a booking.</h4>
         {product.options.map((option, index) => (
           <OptionCard key={index} option={option} />
         ))}

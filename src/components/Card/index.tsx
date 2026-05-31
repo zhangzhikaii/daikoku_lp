@@ -4,6 +4,7 @@ import { Activity } from "@/types";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
+import { PriceElement } from "../PriceElement";
 
 type Props = {
   activity: Activity;
@@ -38,28 +39,7 @@ export const Card: React.FC<Props> = ({ activity }) => {
         </div>
         <p className="mt-2 mb-4 text-gray-500">{shortDescription}</p>
         <div className="flex justify-end">
-          {price != null &&
-            (() => {
-              const { basePrice, discountPrice } = price;
-
-              return (
-                <div className="flex text-gray-600 text-md items-end gap-2">
-                  From
-                  {discountPrice != null && (
-                    <span className="line-through">
-                      ¥{basePrice.toLocaleString()}
-                    </span>
-                  )}
-                  <span
-                    className={`font-semibold text-xl ${
-                      discountPrice != null ? "text-red-700" : "text-gray-900"
-                    }`}
-                  >
-                    ¥{(discountPrice ?? basePrice).toLocaleString()}
-                  </span>
-                </div>
-              );
-            })()}
+          {price != null && <PriceElement price={price} />}
         </div>
       </div>
     </Link>
