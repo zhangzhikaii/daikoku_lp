@@ -67,10 +67,10 @@ export const daikokuNightOptions: Optioin[] = [
     url: "https://carlifejapan.rezdy.com/763004/daikoku-pa-car-meet-visit?_gl=1%2A1lavcmo%2A_gcl_au%2AMTc1NjU2MTE0OS4xNzc4MDY3Mzk1LjEyNzk1MDgyODAuMTc3ODA3NTM0Ny4xNzc4MDc1MzQ2%2A_ga%2AMTE4NTMzODc0NS4xNzc3MTMwMzQz%2A_ga_J7SXS0R0D6%2AczE3NzgwNjczMTkkbzckZzEkdDE3NzgwNzU0NzckajU3JGwwJGg0NjMwOTk5Njk.&lang=en",
   },
   {
-    title: "Daikoku PA (Night, with Toyota GR86)",
+    title: "Daikoku PA (Night, with Toyota 86)",
     price: { basePrice: 15500 },
-    imageUrl: "/gr86.png",
-    shortDescription: "Daikoku PA Car Meet Visit in a GR86",
+    imageUrl: "/86.jpg",
+    shortDescription: "Daikoku PA Car Meet Visit in a 86",
     url: "https://carlifejapan.rezdy.com/763009/daikoku-pa-car-meet-visit-in-a-gr86?_gl=1*1awzq87*_gcl_au*MTc1NjU2MTE0OS4xNzc4MDY3Mzk1LjEyNzk1MDgyODAuMTc3ODA3NTM0Ny4xNzc4MDc1MzQ2*_ga*MTE4NTMzODc0NS4xNzc3MTMwMzQz*_ga_J7SXS0R0D6*czE3NzgwNjczMTkkbzckZzEkdDE3NzgwNzU0ODIkajUyJGwwJGg0NjMwOTk5Njk",
   },
   {
